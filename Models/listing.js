@@ -8,14 +8,14 @@ const listingSchema = new Schema({
     },
     description : String,
     image :{
-        
-       default : "https://unsplash.com/photos/photo-of-mountain-ruWkmt3nU58",
+        filename:String,
+     url:{  default : "https://unsplash.com/photos/photo-of-mountain-ruWkmt3nU58",
         type : String,
         required : true,
 
        set : (v) => 
        v=== ""? "https://unsplash.com/photos/photo-of-mountain-ruWkmt3nU58"
-       : v,
+       : v},
     },
     price : Number,
     location : String,

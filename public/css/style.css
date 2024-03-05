@@ -19,11 +19,11 @@
 }
 .f-info-links a {
     text-decoration: none;
-    color: #222222;
+    color: #222222 !important;
 
 }
 .f-info-links a hover{
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 .f-info{
     height: rem;
@@ -39,4 +39,31 @@
     align-items: center;
     justify-content: center;
     
+}
+
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text p{
+    font-weight: 400;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay :hover{
+    opacity: 0.2;
+    background-color: white;
+
 }
