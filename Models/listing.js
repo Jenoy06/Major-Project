@@ -9,12 +9,12 @@ const listingSchema = new Schema({
     description : String,
     image :{
         filename:String,
-     url:{  default : "https://unsplash.com/photos/photo-of-mountain-ruWkmt3nU58",
+     url:{  default : "https://images.unsplash.com/photo-1566908829550-e6551b00979b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         type : String,
         required : true,
 
        set : (v) => 
-       v=== ""? "https://unsplash.com/photos/photo-of-mountain-ruWkmt3nU58"
+       v=== ""? "https://images.unsplash.com/photo-1566908829550-e6551b00979b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
        : v},
     },
     price : Number,
