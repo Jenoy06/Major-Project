@@ -1,23 +1,26 @@
-// const mongoose = require('mongoose');
-// const Schema = mongoose.Schema;
 
-// const listingSchema = new Schema({
-//     title: String,
-//     description: String,
-//     image: {
-//         type : String,
-//         default: "https://unsplash.com/photos/photo-of-mountain-ruWkmt3nU58",
-//         required: true,
-//         set: (v) => v === "" ? "https://unsplash.com/photos/photo-of-mountain-ruWkmt3nU58" : v,
+
+
+
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const listingSchema = new Schema({
+    title: String,
+    description: String,
+    image: {
+        type : String,
+        default: "https://unsplash.com/photos/photo-of-mountain-ruWkmt3nU58",
+        required: true,
+        set: (v) => v === "" ? "https://unsplash.com/photos/photo-of-mountain-ruWkmt3nU58" : v,
        
-//         filename: String,
-//         url: String
-//     },
-//     price: Number,
-//     location: String,
-//     country: String
-// });
+        filename: String,
+        url: String
+    },
+    price: Number,
+    location: String,
+    country: String
+});
 
-// const Listing = mongoose.model('Listing', listingSchema);
-
-// module.exports = Listing;
+const Listing = mongoose.model('Listing', listingSchema);
+module.exports = Listing;

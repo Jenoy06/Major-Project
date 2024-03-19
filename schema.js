@@ -1,6 +1,5 @@
 const Joi = require("joi");
 
-﻿
 
 const listingSchema = Joi.object({
     listing: Joi.object({
@@ -8,11 +7,13 @@ const listingSchema = Joi.object({
         description: Joi.string().required(),
         location: Joi.string().required(), 
         country: Joi.string().required(), 
-        price: Joi.number().required(), 
-        image: Joi.string().allow("", null )
+        price: Joi.number().required().min(0), 
+        image: Joi.string().allow("", null ),                           
     }).required(),
     
 
 
 
 });
+
+module.exports = listingSchema;
