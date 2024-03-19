@@ -65,8 +65,8 @@ app.get("/listings/:id", wrapAsync(async (req, res) => {
 }));
 
 //Create Route
-app.post("/listings",validateListing, wrapAsync(async (req, res, next) => {
-    const newListing = new Listing (req.body.listings);
+app.post("/listings", validateListing, wrapAsync(async (req, res, next) => {
+    const newListing = new Listing (req.body.listings);      //listings
     await newListing.save();
     res.redirect("/listings");
     })
@@ -77,16 +77,24 @@ app.post("/listings",validateListing, wrapAsync(async (req, res, next) => {
 app.get("/listings/:id/edit", wrapAsync(async(req, res) =>{
     let { id } = req.params;
     const listing = await Listing.findById(id);
+    console.log(req.body); 
     res.render("listings/edit.ejs", { listing });
 
 }));
 
 // Update
+// app.put("/listings/:id", validateListing, wrapAsync(async (req, res) =>{
+//     let { id } = req.params;
+//     await Listing.findByIdAndUpdate(id, {...req.body.listings});
+//     res.redirect(`/listings/${id}`);
+
+// }));
+
 app.put("/listings/:id", validateListing, wrapAsync(async (req, res) =>{
     let { id } = req.params;
-    await Listing.findByIdAndUpdate(id, {...req.body.listings});
+    let demoListing = await Listing.findByIdAndUpdate(id, {...req.body.listing});
+    console.log(demoListing);
     res.redirect(`/listings/${id}`);
-
 }));
 
 
